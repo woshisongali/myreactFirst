@@ -1,3 +1,4 @@
+var webpack = require('webpack')
 module.exports = {
   entry: {
     index: "./es6src/index.js",
@@ -10,7 +11,7 @@ module.exports = {
 
   devtool: "source-map",
   // devtool: "none",
-  mode: 'development',
+  mode: 'production',
 
   resolve: {
     extensions: [ ".js", ".json"]
@@ -23,5 +24,20 @@ module.exports = {
   },
 
   plugins: [
+    // new webpack.optimize.CommonsChunkPlugin('vendor',  'vendor.js')
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'vendor',
+    //   // filename: "vendor.js"
+    //   // (Give the chunk a different name)
+
+    //   minChunks: Infinity,
+    //   // (with more entries, this ensures that no other module
+    //   //  goes into the vendor chunk)
+    // })
   ],
+  optimization: {
+      splitChunks: {
+     name: 'common'
+    }
+  }
 };

@@ -36,8 +36,15 @@ module.exports = {
     // })
   ],
   optimization: {
-      splitChunks: {
-     name: 'common'
+    splitChunks: {
+        cacheGroups: {
+            commons: {
+                name: "commons",
+                chunks: "initial",
+                minChunks: 2
+            }
+        }
     }
-  }
+}
+
 };

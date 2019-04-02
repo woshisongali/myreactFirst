@@ -1,3 +1,6 @@
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 module.exports = {
   entry: {
     index: "./src/index.tsx",
@@ -7,6 +10,9 @@ module.exports = {
     filename: "[name].js",
     path: __dirname + "/dist"
   },
+  // devServer: {
+  //   port: 8086
+  // },
 
   devtool: "source-map",
   mode: 'production',
@@ -24,5 +30,9 @@ module.exports = {
   },
 
   plugins: [
+    // new HtmlWebpackPlugin({
+    //   // template: './pages/program1/index/index.html'
+    //   template: "./index.html"
+    // })
   ],
 };

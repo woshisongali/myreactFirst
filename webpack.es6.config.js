@@ -1,4 +1,6 @@
 var webpack = require('webpack')
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 module.exports = {
   entry: {
     index: "./es6src/index.js",
@@ -9,6 +11,9 @@ module.exports = {
     path: __dirname + "/es6dist"
   },
 
+  devServer: {
+    port: 8086
+  },
   devtool: "source-map",
   // devtool: "none",
   mode: 'production',
@@ -24,16 +29,10 @@ module.exports = {
   },
 
   plugins: [
-    // new webpack.optimize.CommonsChunkPlugin('vendor',  'vendor.js')
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: 'vendor',
-    //   // filename: "vendor.js"
-    //   // (Give the chunk a different name)
-
-    //   minChunks: Infinity,
-    //   // (with more entries, this ensures that no other module
-    //   //  goes into the vendor chunk)
-    // })
+    new HtmlWebpackPlugin({
+      // template: './pages/program1/index/index.html'
+      template: "./index.html"
+    })
   ],
   optimization: {
     splitChunks: {

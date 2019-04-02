@@ -1,12 +1,12 @@
 import React from 'react'
-import ReactDOM from "react-dom"
+// import ReactDOM from "react-dom"
 
 class TodoApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = { items: [], text: '' };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   render() {
@@ -31,11 +31,11 @@ class TodoApp extends React.Component {
     );
   }
 
-  handleChange(e) {
+  handleChange = (e) => {
     this.setState({ text: e.target.value });
   }
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
     if (!this.state.text.length) {
       return;

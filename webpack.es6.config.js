@@ -1,6 +1,7 @@
 var webpack = require('webpack')
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
+// console.log('===========')
+// console.log(process.env.NODE_ENV)
 module.exports = {
   entry: {
     index: "./es6src/index.js",
@@ -16,7 +17,8 @@ module.exports = {
   },
   devtool: "source-map",
   // devtool: "none",
-  mode: 'production',
+  // mode: 'production',
+  mode: process.env.NODE_ENV,
 
   resolve: {
     extensions: [ ".js", ".json"]

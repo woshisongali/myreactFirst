@@ -41,6 +41,7 @@
     "@types/react-dom": "^16.8.2",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
-    "react-hot-loader": "^4.6.5"
+    "react-hot-loader": "^4.6.5",
+    "remarkable": "^1.7.1"
   }
 }

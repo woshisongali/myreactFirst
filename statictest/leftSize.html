@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>左侧固定大小</title>
+  <style>
+    .space20 {
+      margin-top: 20px;
+    }
+    .left-size-style1 {
+      display: table;
+      width: 100%;
+    }
+    .left-size-style1 .leftele{
+      display: table-cell;
+      width: 120px;
+      height: 120px;
+      background: green;
+    }
+    .left-size-style1 .main-item{
+      display: table-cell;
+      background: #aaa;
+    }
+    .left-size-style2 {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      width: 100%;
+    }
+    .left-size-style2 .leftele{
+      width: 120px;
+      height: 120px;
+      background: green;
+    }
+    .left-size-style2 .main-item{
+      flex: 1;
+      height: 120px;
+      background: #aaa;
+    }
+    .left-size-style3 {
+      width: 100%;
+    }
+    .clearfloat:after {  
+      content: "."; 
+      display: block; 
+      height: 0; 
+      clear: both; 
+      visibility: hidden;  
+    } 
+    .left-size-style3 .leftele{
+      width: 120px;
+      height: 120px;
+      background: green;
+      float: left;
+    }
+    .left-size-style3 .main-item{
+      margin-left: 120px;
+      height: 120px;
+      background: #aaa;
+    }
+    .left-size-style4 {
+      width: 100%;
+      position: relative;
+    }
+    .left-size-style4 .leftele{
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      top: 0px;
+      left: 0px;
+      background: green;
+    }
+    .left-size-style4 .main-item{
+      margin-left: 120px;
+      height: 120px;
+      background: #aaa;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="space20 left-size-style1">
+    <a class="leftele"></a>
+    <div class="main-item">see table</div>
+  </div>
+  <div class="space20 left-size-style2">
+      <a class="leftele"></a>
+      <div class="main-item">see flex</div>
+    </div>
+  <div class="space20 left-size-style3 clearfloat">
+      <a class="leftele"></a>
+      <div class="main-item">see float</div>
+  </div>
+  <div class="space20 left-size-style4">
+      <a class="leftele"></a>
+      <div class="main-item">see absolute</div>
+  </div>
+  
+</body>
+</html>

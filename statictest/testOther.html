@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> the test </title>
+</head>
+<body>
+  <div>
+    <!-- 用户通过留言板注入如下的js恶意代码 -->
+    <!-- <img src='null' onerror='alert(123)' /> -->
+    <!-- 可拿去到用户信息 -->
+    <img src='null' onerror='alert(document.cookie)' />
+
+    <!-- 劫持流量实现恶意跳转 -->
+    <!-- <script>window.location.href="http://www.baidu.com";</script> -->
+  </div>
+  <script>
+  /*
+  XSS攻击
+  1.窃取网页浏览中的cookie值
+   在网页浏览中我们常常涉及到用户登录，登录完毕之后服务端会返回一个cookie值。
+   这个cookie值相当于一个令牌，拿着这张令牌就等同于证明了你是某个用户。
+  2.劫持流量实现恶意跳转 
+  */
+  /*
+  CSRF攻击
+  先简单解释以下csrf攻击。Csrf攻击就是在未经你许可的情况下用你的名义发送恶意请求（比如修改密码，银行转账等），
+  */
+  </script>
+</body>
+</html>

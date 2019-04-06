@@ -297,3 +297,55 @@ function simpleRender (express) {
 //   day: '12'
 // })
 // console.log(renderstr2)
+
+/**
+ * 75颜色排序
+ */
+var sortColors = function(nums) {
+    let maps = []
+    for (let i = 0, len = nums.length; i < len; i++) {
+      let curnum = nums[i]
+      if (!maps[curnum]) {
+        maps[curnum] = 1
+      } else {
+        maps[curnum]++
+      }
+    }
+    let arr = []
+    for (let i = 0, len = maps.length; i < len; i++) {
+      let sublen = maps[i]
+      for (let j = 0; j < sublen; j++) {
+        arr.push(i)
+      }
+    }
+    return arr
+};
+
+// console.log(sortColors([2,0,2,1,1,0]))
+
+var mergeSort = function (nums) {
+  function compare (arr1, arr2) {
+    let newArr = []
+    while (arr1.length && arr2.length) {
+      if (arr1[0] < arr2[0]) {
+        newArr.push(arr1.shift())
+      } else {
+        newArr.push(arr2.shift())
+      }
+    }
+    return newArr.concat(arr1, arr2)
+  }
+
+  function decompare (arr) {
+    if (arr.length === 1) {
+      return arr
+    }
+    var mid = ~~(arr.length / 2)
+    let left = arr.slice(0, mid)
+    let right = arr.slice(mid)
+    return compare(decompare(left), decompare(right))
+  }
+
+  return decompare(nums)
+}
+console.log(mergeSort([2,0,2,1,1,0]))

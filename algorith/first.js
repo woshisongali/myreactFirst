@@ -348,4 +348,39 @@ var mergeSort = function (nums) {
 
   return decompare(nums)
 }
-console.log(mergeSort([2,0,2,1,1,0]))
+// console.log(mergeSort([2,0,2,1,1,0]))
+
+function quickSortMain (nums) {
+  let count = 0
+  function partition (list, low, high) {
+    let mark = list[low]
+    let l = low, h = high 
+    while (l < h && count <=100) {
+      while (list[h] > mark && l < h) 
+      h--
+      while (list[l] < mark && l < h)
+      l++
+      if (l < h) {
+        var temp = list[h]
+        list[h]= list[l]
+        list[l] = temp
+      }
+      count++
+    }
+    // list[low] = list[l]
+    // list[l] = mark
+    return l
+  }
+  function quickSort (list, low, high) {
+    if (low >= high) { return}
+    let q = partition(list, low, high)
+    quickSort(list, low, q -1)
+    quickSort(list, q + 1, high)
+  }
+  quickSort(nums, 0, nums.length - 1)
+  return nums
+}
+
+// console.log(quickSortMain([4,2, 7, 4, 2,1]))
+
+// console.log(quickSortMain([88,99, 87, 4, 21,1]))

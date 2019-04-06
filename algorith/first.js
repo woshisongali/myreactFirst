@@ -270,12 +270,12 @@ function simpleRender (express) {
     match = reg.exec(express)
   }
   if (express) {
-    keys.push(express)
+    keys.unshift(express)
   }
   // console.log(keys)
   return function (obj) {
     let arr = []
-    for (let i = keys.length -1; i >= 0; i--) {
+    for (let i = 0, len = keys.length; i < len; i++) {
       if (!obj[keys[i]]) {
         return
       }
@@ -285,9 +285,15 @@ function simpleRender (express) {
   }
   // console.log(newExpress)
 }
-let renderstr = simpleRender('year-{month}-${day}')({
-  month: '00',
-  year:'2233',
-  day: '12'
-})
-console.log(renderstr)
+// let renderstr = simpleRender('year-{month}-${day}')({
+//   month: '00',
+//   year:'2233',
+//   day: '12'
+// })
+// console.log(renderstr)
+// let renderstr2 = simpleRender('day-{month}-${year}')({
+//   month: '00',
+//   year:'2233',
+//   day: '12'
+// })
+// console.log(renderstr2)

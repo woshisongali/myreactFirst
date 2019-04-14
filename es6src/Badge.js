@@ -1,6 +1,8 @@
 // import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import React from 'react'
+import Welcom from './Welcom'
+
 
 // const propTypes = {
 //   prefix: PropTypes.string,
@@ -9,10 +11,16 @@ import React from 'react'
 // }
 
 
+const InnerEm = () => {
+  return (
+    <em>i am a em</em>
+  )
+}
 const Badge = ({variant, prefix='prefix', 
 pill = false, className, ...props}) => {
   // 通过...props将其余的参数进行整合 ，在这里我们可以拿到 组件的挂载节点children
   return (
+    <>
     <span
       {...props}
       className={classNames(
@@ -22,6 +30,9 @@ pill = false, className, ...props}) => {
         variant && `${prefix}-${variant}`
       )}
     /> 
+    <InnerEm />
+    <Welcom />
+    </>
   ) 
 }
 

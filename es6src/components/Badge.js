@@ -1,7 +1,7 @@
 // import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import React from 'react'
-import Welcom from './Welcom'
+import Welcom from '../Welcom'
 
 
 // const propTypes = {

@@ -4,7 +4,9 @@ import ReactDOM from "react-dom";
 import TodoApp from './TodoApp'
 import MarkdownEditor from './MarkdownEditor'
 import Table from './FragmentTest'
-import Badge from './Badge'
+import Badge from './components/Badge'
+import UseAntd from './useAntd'
+import Affix from './components/Affix'
 
 ReactDOM.render(
   <div>
@@ -14,6 +16,7 @@ ReactDOM.render(
      <Badge pill variant="primary">
         Primary
     </Badge>
+    <Affix offsetBottom='10px' />
   </div>,
   document.getElementById('root')
 );

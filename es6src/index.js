@@ -16,7 +16,7 @@ ReactDOM.render(
      <Badge pill variant="primary">
         Primary
     </Badge>
-    <Affix offsetBottom='10px' />
+    <Affix offsetBottom='0' />
   </div>,
   document.getElementById('root')
 );

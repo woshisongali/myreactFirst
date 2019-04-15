@@ -133,7 +133,7 @@ class Affix extends React.Component {
     return (
       <div ref={this.myRef} style={this.state.placeholderStyle}>
         <div className="affix-ele" style={this.state.affixStyle}>
-          {this.state.msg} affix
+         {this.props.children}
         </div>
       </div>
     )

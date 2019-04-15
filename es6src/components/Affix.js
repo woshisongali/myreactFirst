@@ -40,12 +40,12 @@ const eventOperator = {
 
   removeObserver (curAffix) {
     let targetIndex = -1
-    this.observers.forEach((affix, index) => {
+    for (let i = 0, len = this.observers.length; i < len; i++) {
       if (curAffix === affix) {
         targetIndex = index
+        break
       }
-      return false
-    })
+    }
     if (targetIndex > -1) {
       this.observers.splice(targetIndex, 1)
     }
@@ -78,7 +78,10 @@ class Affix extends React.Component {
     this.affixEle = this.myRef.current.querySelector('.affix-ele')
     eventOperator.addObserver(this)
   }
-  
+  componentWillUnmount () {
+    eventOperator.removeObserver(this)
+  }
+
   setAffixStyle () {
     const targetRect = getRect(this.affixEle)
     const placeholderReact = getRect(this.placeholderNode)

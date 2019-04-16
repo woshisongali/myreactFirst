@@ -62,17 +62,17 @@ module.exports = {
       // template: './pages/program1/index/index.html'
       template: "./index.html"
     })
-  ],
-  optimization: {
-    splitChunks: {
-        cacheGroups: {
-            commons: {
-                name: "commons",
-                chunks: "initial",
-                minChunks: 2
-            }
-        }
-    }
-}
+  ]
+//   optimization: {
+//     splitChunks: {
+//         cacheGroups: {
+//             commons: {
+//                 name: "commons",
+//                 chunks: "initial",
+//                 minChunks: 2
+//             }
+//         }
+//     }
+// }
 
 };

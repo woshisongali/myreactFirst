@@ -6,6 +6,7 @@
   "scripts": {
     "test": "webpack --config webpack.common.config.js",
     "dev": "export NODE_ENV=development; webpack-dev-server --inline --hot --config webpack.es6.config.js ",
+    "timer": "export NODE_ENV=development; webpack-dev-server --progress --watch --colors --profile --inline --hot --config webpack.es6.config.js ",
     "es6test": "webpack --config webpack.es6.config.js"
   },
   "author": "",

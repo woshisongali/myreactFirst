@@ -20,7 +20,11 @@ const App = () => {
     <Affix offsetBottom='0' >
       the bottom Affix 
     </Affix>
-    <Carousel></Carousel>
+    <Carousel>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </Carousel>
   </div>
   )
 }

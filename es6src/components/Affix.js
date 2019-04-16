@@ -49,7 +49,7 @@ const eventOperator = {
     if (targetIndex > -1) {
       this.observers.splice(targetIndex, 1)
     }
-  },
+  }
 
 
 }

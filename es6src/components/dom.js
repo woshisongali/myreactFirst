@@ -6,3 +6,14 @@ export const getRect = (element) => {
       bottom: window.innerHeight
     }
 }
+
+export const getEleChildren = (element) => {
+  let arr = []
+  const children = element.children
+  for (let i = 0, len = children.length; i < len; i++) {
+    if (children[i].nodeType === 1) {
+      arr.push(children[i])
+    }
+  }
+  return arr
+}

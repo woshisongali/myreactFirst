@@ -13,7 +13,10 @@ module.exports = {
   },
 
   devServer: {
-    port: 8086
+    port: 8086,
+    inline:true,
+    noInfo:true,
+    hot: true
   },
   devtool: "source-map",
   // devtool: "none",
@@ -26,6 +29,30 @@ module.exports = {
 
   module: {
     rules: [
+      {
+        test: /\.styl(us)?$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: { 
+              modules: true, 
+              localIdentName: '[hash:base64:5]__[local]' 
+            }
+          },
+          {
+            loader: 'stylus-loader'
+          }
+        ],
+        exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: [ "style-loader", "css-loader"],
+        exclude: /node_modules/
+      },
       { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" }
     ]
   },

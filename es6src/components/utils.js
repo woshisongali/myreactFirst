@@ -32,6 +32,46 @@ export const throttle = (func, wait, options) => {
   }
 }
 
+
+export const debounce = (func, wait, immediate) => {
+    let timeout, result, context, args
+
+    const later = function() {
+      timeout = null
+      if (args) result = func.apply(context, args)
+      if (!timeout) context = args = null
+    }
+
+    const debounced = () => {
+      args = arguments
+      context = this
+      if (timeout) clearTimeout(timeout)
+      if (immediate) {
+        let callNow = !timeout
+        timeout = setTimeout(later, wait)
+        if (callNow) result = func.apply(constext, args)
+      } else {
+        timeout = setTimeout(later, wait)
+      }
+      return result
+    }
+
+    debounced.cancel = function() {
+      clearTimeout(timeout)
+      timeout = null
+    }
+    return debounced
+}
+/**
+ *  the example
+ *  console.log('has mounted')
+    let testDebounce = debounce(() => {
+      console.log('seee the debounce')
+    }, 100)
+    testDebounce()
+    testDebounce()
+ */
+
 export const shallowEqual = (obj1, obj2) => {
   if (obj1 === obj2 || (obj1 !== obj1 && obj2 !== obj2)) {
     return true

@@ -18,7 +18,7 @@ module.exports = {
     noInfo:true,
     hot: true
   },
-  devtool: "source-map",
+  devtool: "eval-source-map",
   // devtool: "none",
   // mode: 'production',
   mode: process.env.NODE_ENV,
@@ -62,7 +62,11 @@ module.exports = {
       // template: './pages/program1/index/index.html'
       template: "./index.html"
     })
-  ]
+  ],
+  optimization: { //在开发环境中加，生产环境不加
+		usedExports: true
+	}
+
 //   optimization: {
 //     splitChunks: {
 //         cacheGroups: {

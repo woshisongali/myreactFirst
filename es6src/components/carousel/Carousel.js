@@ -23,7 +23,7 @@ class Carousel extends React.Component {
       <div className={classNames(
         style['red-font']
       )}>
-        to create the carouse ssss
+        to create the carouse color ddd
       </div>
     )
   }

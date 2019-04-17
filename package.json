@@ -48,6 +48,7 @@
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-hot-loader": "^4.8.4",
+    "redux": "^4.0.1",
     "remarkable": "^1.7.1"
   }
 }

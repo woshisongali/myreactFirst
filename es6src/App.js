@@ -8,6 +8,7 @@ import Badge from './components/Badge'
 // import UseAntd from './useAntd'
 import Affix from './components/Affix'
 import Carousel from './components/carousel/Carousel'
+import ReduxTodo from './reduxtest'
 
 const App = () => {
   return (
@@ -25,6 +26,8 @@ const App = () => {
       <li>2</li>
       <li>3</li>
     </Carousel>
+    <ReduxTodo>
+    </ReduxTodo>
   </div>
   )
 }
